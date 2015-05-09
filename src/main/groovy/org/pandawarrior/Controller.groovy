@@ -3,24 +3,26 @@ package org.pandawarrior
 import javafx.event.ActionEvent
 import javafx.fxml.FXML
 import javafx.fxml.Initializable
+import javafx.scene.control.Label
 import javafx.scene.control.TextField
+import javafx.scene.paint.Color
 import javafx.stage.DirectoryChooser
 import javafx.stage.FileChooser
 import javafx.stage.Stage
+
+import java.awt.Desktop
 
 /**
  * Created by jt on 5/10/15.
  */
 class Controller{
 
-    @FXML
     public TextField x2c_txtXMLFolder
-    @FXML
     public TextField x2c_txtCSVFile
-    @FXML
     public TextField c2x_txtCSVFile
-    @FXML
     public TextField c2x_txtXMLFolder
+    public Label c2x_indicator
+    public Label x2c_indicator
 
     /**
      * XML to CSV
@@ -30,7 +32,9 @@ class Controller{
         DirectoryChooser chooser = new DirectoryChooser();
         chooser.setTitle("Select folder");
         File folder = chooser.showDialog(new Stage());
-        x2c_txtXMLFolder.setText folder.absolutePath
+        if (folder.exists()){
+            x2c_txtXMLFolder.setText folder.absolutePath
+        }
     }
 
     public void x2c_saveDestination(ActionEvent actionEvent) {
@@ -41,12 +45,30 @@ class Controller{
         )
         chooser.setInitialFileName("new.csv")
         File file = chooser.showSaveDialog(new Stage());
-        x2c_txtCSVFile.setText "${file.absolutePath}"
-        println x2c_txtCSVFile.characters
+        if (file.absolutePath.exists()){
+            x2c_txtCSVFile.setText "${file.absolutePath}"
+        }
+
     }
 
     public void x2c_runXMLtoCSV(ActionEvent actionEvent) {
-        ReadXml.parse(x2c_txtXMLFolder.getText(), x2c_txtCSVFile.getText())
+        String folderPath = x2c_txtXMLFolder.getText()
+        String filePath = x2c_txtCSVFile.getText()
+        if (folderPath.length() > 0 && filePath > 0){
+            boolean result = ReadXml.parse(folderPath, filePath)
+            if (!result){
+                x2c_indicator.setText("UNSUCESSFUL!")
+                x2c_indicator.setTextFill(Color.RED)
+            }else{
+                x2c_txtCSVFile.clear()
+                x2c_txtXMLFolder.clear()
+                x2c_indicator.setText("SUCCESS!")
+                x2c_indicator.setTextFill(Color.GREEN)
+            }
+        }else{
+            x2c_indicator.setText("Please set folder or file location!")
+            x2c_indicator.setTextFill(Color.RED)
+        }
     }
 
     public void c2x_openCSVFile(ActionEvent actionEvent) {
@@ -56,18 +78,32 @@ class Controller{
                 new FileChooser.ExtensionFilter("CSV File (*.csv)", "*.csv")
         )
         File file = chooser.showOpenDialog(new Stage());
-        c2x_txtCSVFile.setText "${file.absolutePath}"
+        if (file.exists()){
+            c2x_txtCSVFile.setText "${file.absolutePath}"
+        }
+
     }
 
     public void c2x_saveDestination(ActionEvent actionEvent) {
         DirectoryChooser chooser = new DirectoryChooser();
         chooser.setTitle("Select folder");
         File folder = chooser.showDialog(new Stage());
-        c2x_txtXMLFolder.setText folder.absolutePath
+        if (folder.exists()){
+            c2x_txtXMLFolder.setText folder.absolutePath
+        }
     }
 
     public void c2x_runCSVtoXML(ActionEvent actionEvent) {
-        WriteXml.parse(c2x_txtCSVFile.getText(), c2x_txtXMLFolder.getText())
+        boolean result = WriteXml.parse(c2x_txtCSVFile.getText(), c2x_txtXMLFolder.getText())
+        if (!result){
+            c2x_indicator.setText("UNSUCESSFUL!")
+            c2x_indicator.setTextFill(Color.RED)
+        }else{
+            c2x_txtCSVFile.clear()
+            c2x_txtXMLFolder.clear()
+            c2x_indicator.setText("SUCCESS!")
+            c2x_indicator.setTextFill(Color.GREEN)
+        }
     }
 
 

@@ -7,30 +7,35 @@ import groovy.xml.MarkupBuilder
  */
 class WriteXml {
 
-    static void parse( String csvPath, String moduleFolder) {
+    static boolean parse(String csvPath, String moduleFolder) {
         //load and split the file
-        String csv = new File(csvPath).getText()
-        String[] lines = csv.split('\n')
-        Map mainDict = [:]
-        List<String[]> rows = lines.collect { it.split(',') }
-        List head = rows.get(0)
+        try {
+            String csv = new File(csvPath).getText()
+            String[] lines = csv.split('\n')
+            Map mainDict = [:]
+            List<String[]> rows = lines.collect { it.split(',') }
+            List head = rows.get(0)
 
-        head = head - "name"
-        for (int i = 0; i < head.size(); i++) {
-            def tempMap = [:]
+            head = head - "name"
+            for (int i = 0; i < head.size(); i++) {
+                def tempMap = [:]
 
-            for (int j = 1; j < rows.size(); j++) {
-                def column = rows.get(j)
-                def name = column[0]
-                tempMap[name] = column[i + 1]
+                for (int j = 1; j < rows.size(); j++) {
+                    def column = rows.get(j)
+                    def name = column[0]
+                    tempMap[name] = column[i + 1]
+                }
+                mainDict[head[i].replaceAll("\\s", "")] = tempMap
             }
-            mainDict[head[i].replaceAll("\\s", "")] = tempMap
+            return writeFile(moduleFolder, mainDict)
+        } catch (Exception e) {
+            println e.message
+            return false
         }
-        writeFile(moduleFolder, mainDict)
 
     }
 
-    private static void writeFile(String destination, Map mainDict) {
+    private static boolean writeFile(String destination, Map mainDict) throws Exception {
         mainDict.each {
             def stringWriter = new StringWriter()
             def xml = new MarkupBuilder(stringWriter)
@@ -53,7 +58,7 @@ class WriteXml {
             file.withWriter('utf-8') { writer ->
                 writer.write(records)
             }
-
+            return true
         }
     }
 }
