@@ -4,7 +4,7 @@ package org.pandawarrior
  * Created by jt on 5/9/15.
  */
 class ReadXml {
-    static void parse(String moduleFolder=".", String csvDestination="."){
+    static void parse(String moduleFolder, String csvDestination){
         String pattern = ~/strings.xml/
         String dirname = moduleFolder
         String csv
@@ -65,7 +65,7 @@ class ReadXml {
         }
 
 //        println(csv)
-        new File(csvDestination,'new.csv').withWriter('utf-8') { writer ->
+        new File(csvDestination).withWriter('utf-8') { writer ->
             writer.write(csv)
         }
     }

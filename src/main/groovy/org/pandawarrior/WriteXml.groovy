@@ -1,15 +1,13 @@
 package org.pandawarrior
 
 import groovy.xml.MarkupBuilder
-import groovy.xml.StreamingMarkupBuilder
-import groovy.xml.XmlUtil
 
 /**
  * Created by jt on 5/9/15.
  */
 class WriteXml {
 
-    static void parse( String csvPath=".", String moduleFolder=".") {
+    static void parse( String csvPath, String moduleFolder) {
         //load and split the file
         String csv = new File(csvPath).getText()
         String[] lines = csv.split('\n')
