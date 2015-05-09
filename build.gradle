@@ -13,8 +13,9 @@ apply plugin: 'java'
 apply plugin: 'groovy'
 apply plugin: 'application'
 
+
 run {
-    mainClassName = 'org.pandawarrior.App'
+    mainClassName = "org.pandawarrior.App"
 }
 
 // In this section you declare where to find the dependencies of your project
@@ -24,6 +25,16 @@ repositories {
     jcenter()
     mavenCentral()
     mavenLocal()
+}
+
+jar {
+    manifest {
+        attributes "Main-Class": "$mainClassName"
+    }
+
+    from {
+        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+    }
 }
 
 // In this section you declare the dependencies for your production and test code

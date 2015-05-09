@@ -4,9 +4,9 @@ package org.pandawarrior
  * Created by jt on 5/9/15.
  */
 class ReadXml {
-    static void parse(String dirName, String destination="."){
+    static void parse(String moduleFolder=".", String csvDestination="."){
         String pattern = ~/strings.xml/
-        String dirname = dirName
+        String dirname = moduleFolder
         String csv
         Map stringsXMLMap = [:]
         Map mainMap = [:]
@@ -34,6 +34,7 @@ class ReadXml {
                 }
             }
             mainMap[it.key] = tempMap
+            println mainMap
         }
 
         //create a map for the default names
@@ -63,9 +64,9 @@ class ReadXml {
             csv += "\n"
         }
 
-        println(csv)
-//        new File(destination,'new.csv').withWriter('utf-8') { writer ->
-//            writer.write(csv)
-//        }
+//        println(csv)
+        new File(csvDestination,'new.csv').withWriter('utf-8') { writer ->
+            writer.write(csv)
+        }
     }
 }
