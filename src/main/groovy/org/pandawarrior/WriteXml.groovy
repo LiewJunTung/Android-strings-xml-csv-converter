@@ -27,7 +27,7 @@ class WriteXml {
     protected static List getHead(List rows){
         List head = rows.get(0)
         head = head - "name"
-        head = head - " translatable"
+        head = head - "translatable"
         return head
     }
 
@@ -75,7 +75,7 @@ class WriteXml {
 
                     if (fileName.equals("values") && transDict[key].equals("false")){
                         string(name: key, translatable:transDict[key], value)
-                    }else if (transDict[key].equals("true")){
+                    }else if (transDict[key].equals("true") && !value.equals("null")){
                         string(name: key, value)
                     }
                 }

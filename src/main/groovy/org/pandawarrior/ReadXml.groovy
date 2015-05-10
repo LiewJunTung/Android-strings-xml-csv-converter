@@ -28,9 +28,9 @@ class ReadXml {
 
     protected static String createCSV(List headerList, List valueList) {
         String csv
-        csv = headerList.join(", ") + "\n"
+        csv = headerList.join(",") + "\n"
         valueList.each {
-            csv += it.join(", ")
+            csv += it.join(",")
             csv += "\n"
         }
         return csv

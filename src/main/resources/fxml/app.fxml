@@ -42,7 +42,7 @@
                         <Label layoutX="276.0" layoutY="49.0" text="csv File"/>
                         <Label layoutX="220.0" layoutY="141.0" text="Android Resource Folder"/>
                         <Label layoutX="30.0" layoutY="208.0"
-                               text="WARNING: &#10;It wil replace the current XML &#10;Files. Arrays, strings with &#10;translatable false and plurals&#10;WILL BE DELETED. &#10;It's better to save in an external&#10;folder and copy paste everything"
+                               text="WARNING: &#10;It wil replace the current XML &#10;Files. Arrays, plurals&#10;WILL BE DELETED. &#10;It's better to save in an external&#10;folder and copy paste everything"
                                textFill="RED"/>
                         <Button layoutX="501.0" layoutY="87.0" mnemonicParsing="false" onAction="#c2x_openCSVFile"
                                 text="..."/>
