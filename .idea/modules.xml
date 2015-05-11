@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/groovy-app.iml" filepath="$PROJECT_DIR$/groovy-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/javafx_gui/javafx_gui.iml" filepath="$PROJECT_DIR$/javafx_gui/javafx_gui.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xml_csv_parse/xml_csv_parse.iml" filepath="$PROJECT_DIR$/xml_csv_parse/xml_csv_parse.iml" />
     </modules>
   </component>
 </project>

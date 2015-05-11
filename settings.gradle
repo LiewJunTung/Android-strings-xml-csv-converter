@@ -17,3 +17,4 @@ include 'services:webservice'
 */
 
 rootProject.name = 'groovy-app'
+include 'javafx_gui', 'xml_csv_parse'
