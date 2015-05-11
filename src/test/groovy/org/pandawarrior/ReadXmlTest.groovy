@@ -6,6 +6,7 @@ package org.pandawarrior
 class ReadXmlTest extends GroovyTestCase {
 
     private static final String FOLDER = "/home/jt/Dev/tableapp-restaurant-bookings/tableapp"
+    private static final String DESTINATION = "/home/jt/Documents/new.csv"
 
 
     void testGetXmlFromFolder() {
@@ -33,6 +34,11 @@ class ReadXmlTest extends GroovyTestCase {
         List nameList = ReadXml.getNameList(stringXMLMap)
         List valueList = ReadXml.getValueList(mainMap, nameList, translatable)
         assert valueList[0][0] == "app_name"
+    }
+
+    void testParse(){
+        ReadXml.parse(FOLDER, DESTINATION)
+        assert new File(DESTINATION).absolutePath == DESTINATION
     }
 
 }

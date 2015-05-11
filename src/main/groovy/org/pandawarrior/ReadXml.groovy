@@ -50,7 +50,6 @@ class ReadXml {
             tempList.add tempName
             tempList.add translableMap[tempName]
             mainMap.each {
-                //    println it.value
                 def tempMainMap = it.value
                 tempList.add tempMainMap[tempName]
             }
@@ -89,7 +88,7 @@ class ReadXml {
             def tempXml = new XmlSlurper().parseText(xmlFile)
             def tempResources = tempXml.string
             tempResources.each {
-                tempMap[it.@name as String] = it.text()
+                tempMap[it.@name as String] = it.text().replaceAll(",", "@@")
             }
             mainMap[it.key] = tempMap
 //                println mainMap

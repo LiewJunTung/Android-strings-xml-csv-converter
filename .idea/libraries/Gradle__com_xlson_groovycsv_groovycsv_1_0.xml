@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.xlson.groovycsv:groovycsv:1.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.xlson.groovycsv/groovycsv/1.0/631dd33b88794e480c2c8d8d42e8ede047fd4d9a/groovycsv-1.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.xlson.groovycsv/groovycsv/1.0/d3cf4dfa9702837a5723eab0158bc5ebb490dc0f/groovycsv-1.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

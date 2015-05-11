@@ -71,7 +71,7 @@ class WriteXml {
 
                 mainDictValue.each {
                     def key = it.key
-                    def value = it.value
+                    def value = it.value.replaceAll("@@", ",")
 
                     if (fileName.equals("values") && transDict[key].equals("false")){
                         string(name: key, translatable:transDict[key], value)

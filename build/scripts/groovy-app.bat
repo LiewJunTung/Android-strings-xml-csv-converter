@@ -69,7 +69,7 @@ set CMD_LINE_ARGS=%$
 :execute
 @rem Setup the command line
 
-set CLASSPATH=%APP_HOME%\lib\groovy-app.jar;%APP_HOME%\lib\slf4j-api-1.7.12.jar;%APP_HOME%\lib\groovy-all-2.4.3.jar;%APP_HOME%\lib\commons-csv-1.1.jar
+set CLASSPATH=%APP_HOME%\lib\groovy-app.jar;%APP_HOME%\lib\slf4j-api-1.7.12.jar;%APP_HOME%\lib\groovy-all-2.4.3.jar;%APP_HOME%\lib\commons-csv-1.1.jar;%APP_HOME%\lib\groovycsv-1.0.jar;%APP_HOME%\lib\opencsv-2.1.jar
 
 @rem Execute groovy-app
 "%JAVA_EXE%" %DEFAULT_JVM_OPTS% %JAVA_OPTS% %GROOVY_APP_OPTS%  -classpath "%CLASSPATH%" org.pandawarrior.App %CMD_LINE_ARGS%
