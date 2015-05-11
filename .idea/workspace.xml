@@ -2,31 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c6c7f035-b25f-4323-8c17-fe67ae003e09" name="Default" comment="xml writer">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/javafx_gui/build.gradle" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/xml_csv_parse/build.gradle" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/javafx_gui/javafx_gui.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/xml_csv_parse/xml_csv_parse.iml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/scripts/groovy-app" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/scripts/groovy-app.bat" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/tmp/jar/MANIFEST.MF" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/groovy/org/pandawarrior/App.groovy" afterPath="$PROJECT_DIR$/javafx_gui/src/main/groovy/org/pandawarrior/App.groovy" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/groovy/org/pandawarrior/Controller.groovy" afterPath="$PROJECT_DIR$/javafx_gui/src/main/groovy/org/pandawarrior/Controller.groovy" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/groovy/org/pandawarrior/ReadXml.groovy" afterPath="$PROJECT_DIR$/xml_csv_parse/src/main/groovy/org/pandawarrior/ReadXml.groovy" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/groovy/org/pandawarrior/WriteXml.groovy" afterPath="$PROJECT_DIR$/xml_csv_parse/src/main/groovy/org/pandawarrior/WriteXml.groovy" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/resources/fxml/app.fxml" afterPath="$PROJECT_DIR$/javafx_gui/src/main/resources/fxml/app.fxml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/groovy/org/pandawarrior/ReadXmlTest.groovy" afterPath="$PROJECT_DIR$/xml_csv_parse/src/test/groovy/org/pandawarrior/ReadXmlTest.groovy" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/groovy/org/pandawarrior/WriteXmlTest.groovy" afterPath="$PROJECT_DIR$/xml_csv_parse/src/test/groovy/org/pandawarrior/WriteXmlTest.groovy" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/cache.properties.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileHashes.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileSnapshots.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/outputFileStates.bin" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/outputFileStates.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/taskArtifacts.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/gradle.xml" afterPath="$PROJECT_DIR$/.idea/gradle.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/groovy-app.iml" afterPath="$PROJECT_DIR$/groovy-app.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/settings.gradle" afterPath="$PROJECT_DIR$/settings.gradle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xml_csv_parse/build.gradle" afterPath="$PROJECT_DIR$/xml_csv_parse/build.gradle" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xml_csv_parse/xml_csv_parse.iml" afterPath="$PROJECT_DIR$/xml_csv_parse/xml_csv_parse.iml" />
     </list>
     <ignored path="groovy-app.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -128,29 +111,7 @@
                 <option name="myItemType" value="com.intellij.openapi.externalSystem.view.TasksNode" />
               </PATH_ELEMENT>
               <PATH_ELEMENT>
-                <option name="myItemId" value="distribution" />
-                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.TasksNode$1" />
-              </PATH_ELEMENT>
-            </PATH>
-            <PATH>
-              <PATH_ELEMENT>
-                <option name="myItemId" value="" />
-                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ExternalProjectsStructure$RootNode" />
-              </PATH_ELEMENT>
-              <PATH_ELEMENT>
-                <option name="myItemId" value="groovy-app" />
-                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ProjectNode" />
-              </PATH_ELEMENT>
-              <PATH_ELEMENT>
-                <option name="myItemId" value=":javafx_gui" />
-                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ModuleNode" />
-              </PATH_ELEMENT>
-              <PATH_ELEMENT>
-                <option name="myItemId" value="Tasks" />
-                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.TasksNode" />
-              </PATH_ELEMENT>
-              <PATH_ELEMENT>
-                <option name="myItemId" value="application" />
+                <option name="myItemId" value="build" />
                 <option name="myItemType" value="com.intellij.openapi.externalSystem.view.TasksNode$1" />
               </PATH_ELEMENT>
             </PATH>
@@ -248,6 +209,28 @@
                 <option name="myItemType" value="com.intellij.openapi.externalSystem.view.TasksNode" />
               </PATH_ELEMENT>
               <PATH_ELEMENT>
+                <option name="myItemId" value="build" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.TasksNode$1" />
+              </PATH_ELEMENT>
+            </PATH>
+            <PATH>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ExternalProjectsStructure$RootNode" />
+              </PATH_ELEMENT>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="groovy-app" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ProjectNode" />
+              </PATH_ELEMENT>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="groovy-app" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ModuleNode" />
+              </PATH_ELEMENT>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="Tasks" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.TasksNode" />
+              </PATH_ELEMENT>
+              <PATH_ELEMENT>
                 <option name="myItemId" value="application" />
                 <option name="myItemType" value="com.intellij.openapi.externalSystem.view.TasksNode$1" />
               </PATH_ELEMENT>
@@ -262,22 +245,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="true">
+      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/javafx_gui/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.026785715">
-              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="15" column="1" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
+      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/xml_csv_parse/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="30" column="47" selection-start-line="30" selection-start-column="47" selection-end-line="30" selection-end-column="47" />
-              <folding />
+            <state vertical-scroll-proportion="0.26785713">
+              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -823,7 +808,7 @@
         <entry key="$PROJECT_DIR$/../GrailsApp/NewApp" value="1430149672991" />
         <entry key="$PROJECT_DIR$/../GrailsApp/NewGrails" value="1429462245277" />
         <entry key="$PROJECT_DIR$/../Griffon/this" value="1430927880290" />
-        <entry key="$PROJECT_DIR$" value="7156867771733" />
+        <entry key="$PROJECT_DIR$" value="7156869832013" />
         <entry key="$PROJECT_DIR$/../okhttp_wrapper" value="2858928594010" />
       </map>
     </option>
@@ -855,8 +840,6 @@
                           <list>
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/1.7.12/8e20852d05222dc286bf1c71d78d0531e177c317/slf4j-api-1.7.12.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.codehaus.groovy/groovy-all/2.4.3/472f5124c90a551d7ac7ffa39a4a3ba36ac4586a/groovy-all-2.4.3.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.xlson.groovycsv/groovycsv/1.0/631dd33b88794e480c2c8d8d42e8ede047fd4d9a/groovycsv-1.0.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.sf.opencsv/opencsv/2.1/de0cf68e339dc928329fe986a68387531699a01/opencsv-2.1.jar" />
                           </list>
                         </option>
                         <option name="path" value="$PROJECT_DIR$/xml_csv_parse" />
@@ -1022,8 +1005,8 @@
         <option value="$PROJECT_DIR$/javafx_gui/src/test/groovy/org/pandawarrior/ReadXmlTest.groovy" />
         <option value="$PROJECT_DIR$/javafx_gui/src/test/groovy/org/pandawarrior/WriteXmlTest.groovy" />
         <option value="$PROJECT_DIR$/javafx_gui/src/resources/fxml/app.fxml" />
-        <option value="$PROJECT_DIR$/xml_csv_parse/build.gradle" />
         <option value="$PROJECT_DIR$/javafx_gui/build.gradle" />
+        <option value="$PROJECT_DIR$/xml_csv_parse/build.gradle" />
       </list>
     </option>
   </component>
@@ -1087,92 +1070,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="groovy-app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="groovy-app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="xml_csv_parse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="groovy-app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="groovy-app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="javafx_gui" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="groovy-app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="groovy-app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="javafx_gui" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="groovy-app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="groovy-app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="javafx_gui" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="build" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="groovy-app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="groovy-app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="javafx_gui" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="build" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="distributions" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="PackagesPane">
@@ -1194,7 +1091,7 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../tableapp-restaurant-bookings" />
@@ -1230,7 +1127,7 @@
       <recent name="org.pandawarrior" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.groovy-app:javafx_gui [assembleMainDist]">
+  <component name="RunManager" selected="Gradle.groovy-app [assembleMainDist]">
     <configuration default="false" name="groovy-app [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -1243,6 +1140,42 @@
         <option name="taskNames">
           <list>
             <option value="clean" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <method />
+    </configuration>
+    <configuration default="false" name="groovy-app [run]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="run" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <method />
+    </configuration>
+    <configuration default="false" name="groovy-app [assemble]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="assemble" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -1267,7 +1200,7 @@
       </ExternalSystemSettings>
       <method />
     </configuration>
-    <configuration default="false" name="groovy-app [installDist]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration default="false" name="groovy-app [distTar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -1278,43 +1211,7 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value="installDist" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <method />
-    </configuration>
-    <configuration default="false" name="groovy-app:javafx_gui [run]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/javafx_gui" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="run" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <method />
-    </configuration>
-    <configuration default="false" name="groovy-app:javafx_gui [assembleMainDist]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/javafx_gui" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="assembleMainDist" />
+            <option value="distTar" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -1594,17 +1491,17 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Gradle.groovy-app [clean]" />
-      <item index="1" class="java.lang.String" itemvalue="Gradle.groovy-app [assembleMainDist]" />
-      <item index="2" class="java.lang.String" itemvalue="Gradle.groovy-app [installDist]" />
-      <item index="3" class="java.lang.String" itemvalue="Gradle.groovy-app:javafx_gui [run]" />
-      <item index="4" class="java.lang.String" itemvalue="Gradle.groovy-app:javafx_gui [assembleMainDist]" />
+      <item index="1" class="java.lang.String" itemvalue="Gradle.groovy-app [run]" />
+      <item index="2" class="java.lang.String" itemvalue="Gradle.groovy-app [assemble]" />
+      <item index="3" class="java.lang.String" itemvalue="Gradle.groovy-app [assembleMainDist]" />
+      <item index="4" class="java.lang.String" itemvalue="Gradle.groovy-app [distTar]" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Gradle.groovy-app:javafx_gui [assembleMainDist]" />
-        <item index="1" class="java.lang.String" itemvalue="Gradle.groovy-app:javafx_gui [run]" />
-        <item index="2" class="java.lang.String" itemvalue="Gradle.groovy-app [installDist]" />
-        <item index="3" class="java.lang.String" itemvalue="Gradle.groovy-app [assembleMainDist]" />
+        <item index="0" class="java.lang.String" itemvalue="Gradle.groovy-app [distTar]" />
+        <item index="1" class="java.lang.String" itemvalue="Gradle.groovy-app [assembleMainDist]" />
+        <item index="2" class="java.lang.String" itemvalue="Gradle.groovy-app [assemble]" />
+        <item index="3" class="java.lang.String" itemvalue="Gradle.groovy-app [run]" />
         <item index="4" class="java.lang.String" itemvalue="Gradle.groovy-app [clean]" />
       </list>
     </recent_temporary>
@@ -1624,12 +1521,12 @@
       <workItem from="1431190241551" duration="8477000" />
       <workItem from="1431250379236" duration="18842000" />
       <workItem from="1431277113964" duration="1292000" />
-      <workItem from="1431364774481" duration="9754000" />
+      <workItem from="1431364774481" duration="11566000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="68579000" />
+    <option name="totallyTimeSpent" value="70391000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1984,19 +1881,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/xml_csv_parse/build.gradle">
+    <entry file="file://$PROJECT_DIR$/javafx_gui/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="30" column="47" selection-start-line="30" selection-start-column="47" selection-end-line="30" selection-end-column="47" />
+          <caret line="15" column="1" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/javafx_gui/build.gradle">
+    <entry file="file://$PROJECT_DIR$/xml_csv_parse/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.026785715">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
+        <state vertical-scroll-proportion="0.26785713">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2053,7 +1952,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>xml_csv_parse</last-edited>
+          <last-edited>groovy-app</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

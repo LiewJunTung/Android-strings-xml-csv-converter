@@ -9,17 +9,10 @@
 
 apply plugin: 'groovy'
 
-jar {
-    from {
-        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
-    }
-}
-
 // In this section you declare the dependencies for your production and test code
 dependencies {
     compile 'org.slf4j:slf4j-api:1.7.12'
     compile 'org.codehaus.groovy:groovy-all:2.4.3'
-    compile 'com.xlson.groovycsv:groovycsv:1.0'
     testCompile 'junit:junit:4.12'
 }
 
