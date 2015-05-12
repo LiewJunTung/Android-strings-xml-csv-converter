@@ -9,6 +9,8 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/javafx_gui" />
+            <option value="$PROJECT_DIR$/xml_csv_parse" />
           </set>
         </option>
       </GradleProjectSettings>

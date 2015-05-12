@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity          " minWidth="-Infinity"
+         prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8"
+         xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.pandawarrior.Controller">
+    <tabs>
+        <Tab text="XML to CSV">
+            <content>
+                <Pane prefHeight="200.0" prefWidth="200.0">
+                    <children>
+                        <Button layoutX="282.0" layoutY="261.0" mnemonicParsing="false" onAction="#x2c_runXMLtoCSV"
+                                text="OK"/>
+                        <TextField layoutX="30.0" layoutY="87.0" prefHeight="26.0" prefWidth="449.0"
+                                   fx:id="x2c_txtXMLFolder"/>
+                        <TextField layoutX="28.0" layoutY="171.0" prefHeight="26.0" prefWidth="453.0"
+                                   fx:id="x2c_txtCSVFile"/>
+                        <Label layoutX="229.0" layoutY="48.0" text="Android Resource File"/>
+                        <Label layoutX="240.0" layoutY="145.0" text="Destination Folder"/>
+                        <Button layoutX="501.0" layoutY="87.0" mnemonicParsing="false" onAction="#x2c_openXMLFolder"
+                                text="..."/>
+                        <Button layoutX="501.0" layoutY="171.0" mnemonicParsing="false" onAction="#x2c_saveDestination"
+                                text="..."/>
+                        <Label layoutX="283.0" layoutY="218.0" text="" fx:id="x2c_indicator"/>
+                    </children>
+                </Pane>
+            </content>
+        </Tab>
+        <Tab text="CSV to XML">
+            <content>
+                <Pane prefHeight="200.0" prefWidth="200.0">
+                    <children>
+                        <Button layoutX="282.0" layoutY="261.0" mnemonicParsing="false" onAction="#c2x_runCSVtoXML"
+                                text="OK"/>
+                        <TextField fx:id="c2x_txtCSVFile" layoutX="30.0" layoutY="87.0" prefHeight="26.0"
+                                   prefWidth="449.0"/>
+                        <TextField fx:id="c2x_txtXMLFolder" layoutX="32.0" layoutY="170.0" prefHeight="26.0"
+                                   prefWidth="453.0"/>
+                        <Label layoutX="276.0" layoutY="49.0" text="csv File"/>
+                        <Label layoutX="220.0" layoutY="141.0" text="Android Resource Folder"/>
+                        <Label layoutX="30.0" layoutY="208.0"
+                               text="WARNING: &#10;It wil replace the current XML &#10;Files. Arrays, plurals&#10;WILL BE DELETED. &#10;It's better to save in an external&#10;folder and copy paste everything"
+                               textFill="RED"/>
+                        <Button layoutX="501.0" layoutY="87.0" mnemonicParsing="false" onAction="#c2x_openCSVFile"
+                                text="..."/>
+                        <Button layoutX="501.0" layoutY="171.0" mnemonicParsing="false" onAction="#c2x_saveDestination"
+                                text="..."/>
+                        <Label layoutX="283.0" layoutY="218.0" text="" fx:id="c2x_indicator"/>
+                    </children>
+                </Pane>
+            </content>
+        </Tab>
+
+    </tabs>
+</TabPane>
