@@ -13,7 +13,6 @@ class WriteXml {
         List head = getHead(rows)
         Map mainDict = getMainMap(rows, head)
         Map transDict = getTransMap(rows)
-        println mainDict
         return writeFile(moduleFolder, mainDict, transDict)
     }
 
