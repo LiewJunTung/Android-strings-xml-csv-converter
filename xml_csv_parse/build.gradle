@@ -7,13 +7,6 @@
  * user guide available at http://gradle.org/docs/2.4/userguide/tutorial_java_projects.html
  */
 
-apply plugin: 'groovy'
-
-compileGroovy {
-    sourceCompatibility = 1.6
-    targetCompatibility = 1.6
-}
-
 // In this section you declare the dependencies for your production and test code
 dependencies {
     compile 'org.slf4j:slf4j-api:1.7.12'

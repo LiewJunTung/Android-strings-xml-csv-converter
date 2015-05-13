@@ -1,0 +1,47 @@
+<idea-plugin version="2">
+  <id>com.pandawarrior.androidXMLParser</id>
+  <name>Android XML to CSV parser</name>
+  <version>1.0</version>
+  <vendor email="pandawarrior91@gmail.com" url="ttps://github.com/pandawarrior91">Liew Jun Tung</vendor>
+
+  <description><![CDATA[
+      <h1>Android XML to CSV parser.</h1><br>
+      <p>Allows you to translate strings.xml into different languages in spreadsheet form, and vice versa.</p>
+      <p><em>NOTE<em></p>
+      <p>It can't convert plurals and arrays, and it will override you current xml strings if you select your android res</br>
+      folder when you convert CSV to XML.</p>
+    ]]></description>
+
+  <!-- please see https://confluence.jetbrains.com/display/IDEADEV/Build+Number+Ranges for description -->
+  <idea-version since-build="131"/>
+    <depends>com.intellij.modules.java</depends>
+  <!-- please see https://confluence.jetbrains.com/display/IDEADEV/Plugin+Compatibility+with+IntelliJ+Platform+Products
+       on how to target different products -->
+  <!-- uncomment to enable plugin in all products
+  <depends>com.intellij.modules.lang</depends>
+  -->
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+  </extensions>
+
+  <application-components>
+    <!-- Add your application components here -->
+  </application-components>
+
+  <project-components>
+    <!-- Add your project components here -->
+  </project-components>
+
+  <actions>
+    <!-- Add your actions here -->
+      <action id="Textboxes"
+              class="org.pandawarrior.androidXMLParser.XMLsToCSV"
+              text="_Android XML-CSV parser"
+              description="A test menu item"
+              >
+          <add-to-group group-id="AndroidToolsGroup" anchor="last"/>
+      </action>
+  </actions>
+
+</idea-plugin>

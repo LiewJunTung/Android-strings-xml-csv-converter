@@ -7,7 +7,6 @@
  * user guide available at http://gradle.org/docs/2.4/userguide/tutorial_java_projects.html
  */
 
-apply plugin: 'groovy'
 apply plugin: 'application'
 
 
