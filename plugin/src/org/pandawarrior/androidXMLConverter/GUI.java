@@ -1,7 +1,8 @@
-package org.pandawarrior.androidXMLParser;
+package org.pandawarrior.androidXMLConverter;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.DialogWrapper;
+import com.intellij.ui.JBColor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.pandawarrior.ReadXml;
@@ -30,14 +31,15 @@ public class GUI extends DialogWrapper {
     private JTextField cxReadField;
     private JTextField cxWriteField;
     private JButton cxOKButton;
+    private JLabel xcLabel;
+    private JLabel cxLabel;
     private String currentFolder;
-    private Project jProject;
 
     public GUI(Project project, String initialFolder) {
         super(project, true);
         this.setTitle("Android Parser");
+        this.setSize(450, 300);
         this.setResizable(true);
-        //setBounds(100, 100, 450, 300);
        // setContentPane(rootPane);
        // setVisible(true);
         //setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
@@ -64,6 +66,8 @@ public class GUI extends DialogWrapper {
                 readXML(folder, csv);
                 xcReadField.setText("");
                 xcWriteField.setText("");
+                xcLabel.setText("SUCCESS!");
+                xcLabel.setForeground(JBColor.GREEN);
             }
         });
         cxReadBtn.addActionListener(new ActionListener() {
@@ -86,9 +90,12 @@ public class GUI extends DialogWrapper {
                 writeXML(folder, csv);
                 cxReadField.setText("");
                 cxWriteField.setText("");
+                cxLabel.setText("SUCCESS!");
+                cxLabel.setForeground(JBColor.GREEN);
             }
         });
         this.setOKActionEnabled(false);
+
         this.init();
     }
     private String chooseFolder() {

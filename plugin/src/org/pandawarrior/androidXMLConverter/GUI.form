@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="org.pandawarrior.androidXMLParser.GUI">
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="org.pandawarrior.androidXMLConverter.GUI">
   <grid id="27dc6" binding="rootPane" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
@@ -11,13 +11,14 @@
       <tabbedpane id="338b" binding="tabbedPane1" default-binding="true">
         <constraints>
           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <minimum-size width="400" height="-1"/>
             <preferred-size width="200" height="200"/>
           </grid>
         </constraints>
         <properties/>
         <border type="none"/>
         <children>
-          <grid id="f506b" layout-manager="GridLayoutManager" row-count="6" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+          <grid id="f506b" layout-manager="GridLayoutManager" row-count="7" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
             <margin top="0" left="0" bottom="0" right="0"/>
             <constraints>
               <tabbedpane title="XML to CSV"/>
@@ -28,6 +29,7 @@
               <component id="e89aa" class="javax.swing.JTextField" binding="xcReadField">
                 <constraints>
                   <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <minimum-size width="300" height="-1"/>
                     <preferred-size width="150" height="-1"/>
                   </grid>
                 </constraints>
@@ -36,6 +38,7 @@
               <component id="a35a5" class="javax.swing.JTextField" binding="xcWriteField">
                 <constraints>
                   <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <minimum-size width="300" height="-1"/>
                     <preferred-size width="150" height="-1"/>
                   </grid>
                 </constraints>
@@ -73,11 +76,6 @@
                   <text value="Android Resource Folder"/>
                 </properties>
               </component>
-              <vspacer id="8f84e">
-                <constraints>
-                  <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
-                </constraints>
-              </vspacer>
               <vspacer id="de651">
                 <constraints>
                   <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
@@ -91,9 +89,22 @@
                   <text value="CSV File"/>
                 </properties>
               </component>
+              <component id="8a550" class="javax.swing.JLabel" binding="xcLabel">
+                <constraints>
+                  <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value=""/>
+                </properties>
+              </component>
+              <vspacer id="93746">
+                <constraints>
+                  <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+                </constraints>
+              </vspacer>
             </children>
           </grid>
-          <grid id="81141" layout-manager="GridLayoutManager" row-count="6" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+          <grid id="81141" layout-manager="GridLayoutManager" row-count="7" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
             <margin top="0" left="0" bottom="0" right="0"/>
             <constraints>
               <tabbedpane title="CSV to XML"/>
@@ -104,6 +115,7 @@
               <component id="d2b1a" class="javax.swing.JTextField" binding="cxReadField">
                 <constraints>
                   <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <minimum-size width="300" height="-1"/>
                     <preferred-size width="150" height="-1"/>
                   </grid>
                 </constraints>
@@ -112,6 +124,7 @@
               <component id="b16f6" class="javax.swing.JTextField" binding="cxWriteField">
                 <constraints>
                   <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <minimum-size width="300" height="-1"/>
                     <preferred-size width="150" height="-1"/>
                   </grid>
                 </constraints>
@@ -135,7 +148,7 @@
               </component>
               <component id="e1fa5" class="javax.swing.JButton" binding="cxOKButton">
                 <constraints>
-                  <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                  <grid row="6" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
                   <text value="OK"/>
@@ -151,7 +164,7 @@
               </component>
               <vspacer id="836be">
                 <constraints>
-                  <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+                  <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
                 </constraints>
               </vspacer>
               <vspacer id="14a98">
@@ -165,6 +178,14 @@
                 </constraints>
                 <properties>
                   <text value="Save Folder"/>
+                </properties>
+              </component>
+              <component id="90357" class="javax.swing.JLabel" binding="cxLabel">
+                <constraints>
+                  <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value=""/>
                 </properties>
               </component>
             </children>

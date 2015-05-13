@@ -1,12 +1,9 @@
-package org.pandawarrior.androidXMLParser;
+package org.pandawarrior.androidXMLConverter;
 
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DataKeys;
 import com.intellij.openapi.project.Project;
-import jetbrains.buildServer.messages.serviceMessages.Message;
-
-import javax.swing.*;
 
 /**
  * Created by jt on 5/12/15.
