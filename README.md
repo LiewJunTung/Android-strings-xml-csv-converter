@@ -24,5 +24,5 @@ Download and install the IntelliJ or Android Studio Plugin from the jetbrains re
 1. It won't convert arrays and plurals, make sure you save them in other files such as array.xml
 
 ##TODO
-[] Ability to convert arrays and plurals
-[x] IntelliJ and Android Studio plugin
+- [ ] Ability to convert arrays and plurals
+- [x] IntelliJ and Android Studio plugin
