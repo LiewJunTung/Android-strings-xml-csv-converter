@@ -17,6 +17,7 @@ You want to translate strings.xml into different languages in spreadsheet form (
 3. Open groovy-app/bin/groovy-app (groovy-app.bat if you are on Windows)
 4. From here, with the GUI onwards it's pretty self explanatory. Select Android folder for the value and the location of your saved csv.
 ![Image of CSV](https://github.com/pandawarrior91/Android-strings-xml-csv-converter/blob/master/gui.png)
+
 ####OR
 Download and install the IntelliJ or Android Studio Plugin from the jetbrains repository or [here](https://github.com/pandawarrior91/Android-strings-xml-csv-converter/releases/download/v0.10.0/android.xml.csv.parser.plugin.zip)
 

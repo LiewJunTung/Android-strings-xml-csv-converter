@@ -10,6 +10,7 @@
 allprojects {
     repositories {
         mavenCentral()
+        mavenLocal()
     }
     apply plugin: 'groovy'
     sourceCompatibility = 1.6
