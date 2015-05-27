@@ -33,8 +33,11 @@ public class GUI extends DialogWrapper {
     private JButton cxOKButton;
     private JLabel xcLabel;
     private JLabel cxLabel;
+    private JRadioButton stringsXmlRadioButton;
+    private JRadioButton pluralsXmlRadioButton;
+    private JRadioButton arraysXmlRadioButton;
     private String currentFolder;
-
+    private String selected;
     public GUI(Project project, String initialFolder) {
         super(project, true);
         this.setTitle("Android Parser");
@@ -55,7 +58,7 @@ public class GUI extends DialogWrapper {
         xcWriteBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                xcWriteField.setText(saveCSV());
+                xcWriteField.setText(chooseFolder());
             }
         });
         xcOKButton.addActionListener(new ActionListener() {
@@ -94,9 +97,29 @@ public class GUI extends DialogWrapper {
                 cxLabel.setForeground(JBColor.GREEN);
             }
         });
+        stringsXmlRadioButton.setSelected(true);
+        selected = "strings.xml";
+        stringsXmlRadioButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                selected = "strings.xml";
+            }
+        });
+        pluralsXmlRadioButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                selected = "plurals.xml";
+            }
+        });
+        arraysXmlRadioButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                selected = "arrays.xml";
+            }
+        });
         this.setOKActionEnabled(false);
-
         this.init();
+
     }
     private String chooseFolder() {
         JFileChooser jFileChooser = new JFileChooser();
@@ -141,7 +164,13 @@ public class GUI extends DialogWrapper {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
-                WriteXml.parse(csv, folder);
+                if (selected.equals("strings.xml")){
+                    WriteXml.parse(csv, folder);
+                }else if(selected.equals("arrays.xml")){
+                    WriteXml.parseArray(csv, folder, WriteXml.getARRAY_FILE());
+                }else if (selected.equals("plurals.xml")){
+                    WriteXml.parseArray(csv, folder, WriteXml.getPLURALS_FILE());
+                }
             }
         });
 
@@ -151,7 +180,7 @@ public class GUI extends DialogWrapper {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
-                ReadXml.parse(folder, csv);
+                ReadXml.parseAll(folder, csv);
             }
         });
 
