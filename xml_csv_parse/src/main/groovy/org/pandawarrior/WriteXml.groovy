@@ -131,6 +131,7 @@ class WriteXml {
             def xml = new MarkupBuilder(stringWriter)
             def mainDictValue = it.value
             def fileName = it.key
+            def rowName
             String dir = "${destination}/res/${fileName}/"
             File file = new File(dir, "${type}.xml")
             File folder = new File(dir)
@@ -138,18 +139,20 @@ class WriteXml {
             if (!folder.exists()) {
                 folder.mkdirs()
             }
+            rowName = type == ARRAY_FILE ? "string-array" : type
+
             xml.resources {
                 mainDictValue.each {
                     def key = it.key
                     def value = it.value.collect()
                     if (fileName.equals("values") && transDict[key].equals("false")) {
-                        "${type}"(name: key, translatable: transDict[key]) {
+                        "${rowName}"(name: key, translatable: transDict[key]) {
                             value.each {
                                 item(it)
                             }
                         }
                     } else if (transDict[key].equals("true")) {
-                        "${type}"(name: key) {
+                        "${rowName}"(name: key) {
                             value.each {
                                 if (!it.equals("null") || !it.equals(" ")) {
                                     item(it)
