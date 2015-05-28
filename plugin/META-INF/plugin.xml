@@ -8,7 +8,7 @@
       <h1>Android XML to CSV converter.</h1><br>
       <p>Allows you to translate strings.xml, arrays.xml, plurals.xml into different languages in spreadsheet form, and vice versa.</p>
       <p><em>NOTE<em></p>
-      <p>You can access the plugin from the "Other" tab besides "Help" at the toolbar</p>
+      <p>You can access the plugin from the "Tools" menu at the IDE toolbar</p>
       </br>
       <a href ="https://github.com/pandawarrior91/Android-strings-xml-csv-converter">GitHub</a>
     ]]></description>
@@ -41,7 +41,7 @@
               text="_Android XML-CSV parser"
               description="A test menu item"
               >
-          <add-to-group group-id="AndroidToolsGroup" anchor="last"/>
+          <add-to-group group-id="ToolsMenu" anchor="last"/>
       </action>
   </actions>
 

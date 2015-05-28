@@ -14,6 +14,12 @@ class ReadXml {
     final static Pattern STRINGS_PATTERN = ~/strings.xml/
     final static Pattern ARRAYS_PATTERN = ~/arrays.xml/
 
+    /**
+     * Parse all the strings.xml, plurals.xml, arrays.xml to their respective csv
+     * @param moduleFolder
+     * @param csvDestination
+     * @return boolean
+     */
     static boolean parseAll(String moduleFolder, String csvDestination){
         parse(moduleFolder, csvDestination, STRINGS)
         boolean arrayFlag = parseArray(moduleFolder, csvDestination, STRINGS_PATTERN, STRING_ARRAY)
@@ -27,6 +33,14 @@ class ReadXml {
         return true
     }
 
+    /**
+     *
+     * @param moduleFolder folder path
+     * @param csvDestination csv folder path
+     * @param pattern
+     * @param type
+     * @return
+     */
     static boolean parseArray(String moduleFolder, String csvDestination, Pattern pattern, String type) {
         Map stringsXMLMap = getXmlFromFolder(moduleFolder, pattern)
         if (stringsXMLMap.size() > 0){
@@ -106,6 +120,7 @@ class ReadXml {
         }
         return valueList
     }
+
 
     protected static List getArrayValueList(Map arrayMap, List nameList, Map translatableMap) {
         List valueList = []

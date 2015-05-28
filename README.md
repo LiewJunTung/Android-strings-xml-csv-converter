@@ -7,7 +7,8 @@
 ####and back!
 
 ##Why?
-You want to translate strings.xml into different languages in spreadsheet form (Excel, Google Drive)
+You want to translate strings, arrays, plurals in strings.xml, arrays.xml, and plurals.xml into different 
+languages in csv so you can use as spreadsheet in Excel, Google Drive
 
 ##How to use it?
 1. Download the file
@@ -22,8 +23,9 @@ You want to translate strings.xml into different languages in spreadsheet form (
 Download and install the IntelliJ or Android Studio Plugin from the jetbrains repository or [here](https://github.com/pandawarrior91/Android-strings-xml-csv-converter/releases/download/v0.10.0/android.xml.csv.parser.plugin.zip)
 
 ##NOTE
-1. It won't convert arrays and plurals (yet), make sure you save them in other files such as array.xml
+1. ~~It won't convert arrays and plurals (yet), make sure you save them in other files such as array.xml~~
 
 ##TODO
-- [ ] Ability to convert arrays and plurals
+- [x] Ability to convert arrays and plurals
 - [x] IntelliJ and Android Studio plugin
+- [] Clean up the (very ugly) codes
