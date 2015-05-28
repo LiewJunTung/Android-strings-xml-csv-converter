@@ -1,6 +1,6 @@
 #Android String XML-CSV Converter
 ##What does it do?
-####It will convert strings.xml
+####It will convert strings.xml, arrays.xml, plurals.xml
 ![Image of CSV](https://github.com/pandawarrior91/Android-strings-xml-csv-converter/blob/master/strings.png)
 ####to CSV
 ![Image of CSV](https://github.com/pandawarrior91/Android-strings-xml-csv-converter/blob/master/csv.png)
