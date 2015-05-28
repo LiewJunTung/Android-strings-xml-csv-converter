@@ -39,13 +39,14 @@ public class GUI extends DialogWrapper {
     private String currentFolder;
     private String selected;
     private final static String ERROR_MSG1 = "Error! Your csv file might have a data that is empty. use 'null' or ' ' to replace it.";
+
     public GUI(Project project, String initialFolder) {
         super(project, true);
         this.setTitle("Android Parser");
         this.setSize(480, 300);
         this.setResizable(true);
-       // setContentPane(rootPane);
-       // setVisible(true);
+        // setContentPane(rootPane);
+        // setVisible(true);
         //setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         currentFolder = initialFolder;
 
@@ -53,13 +54,17 @@ public class GUI extends DialogWrapper {
         xcReadBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                xcReadField.setText(chooseFolder());
+                String folder = chooseFolder();
+                if (folder != null)
+                xcReadField.setText(folder);
             }
         });
         xcWriteBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                xcWriteField.setText(chooseFolder());
+                String folder = chooseFolder();
+                if (folder != null)
+                xcWriteField.setText(folder);
             }
         });
         xcOKButton.addActionListener(new ActionListener() {
@@ -73,7 +78,7 @@ public class GUI extends DialogWrapper {
                     xcWriteField.setText("");
                     xcLabel.setText("SUCCESS!");
                     xcLabel.setForeground(JBColor.GREEN);
-                }catch (ArrayIndexOutOfBoundsException e1){
+                } catch (ArrayIndexOutOfBoundsException e1) {
                     xcLabel.setText(ERROR_MSG1);
                     xcLabel.setForeground(JBColor.RED);
                 }
@@ -83,13 +88,17 @@ public class GUI extends DialogWrapper {
         cxReadBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                cxReadField.setText(chooseCSV());
+                String csv = chooseCSV();
+                if (csv != null)
+                cxReadField.setText(csv);
             }
         });
         cxWriteBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                cxWriteField.setText(chooseFolder());
+                String folder = chooseFolder();
+                if (folder != null)
+                cxWriteField.setText(folder);
             }
         });
         cxOKButton.addActionListener(new ActionListener() {
@@ -100,10 +109,10 @@ public class GUI extends DialogWrapper {
                     String folder = cxWriteField.getText();
                     writeXML(folder, csv);
                     cxReadField.setText("");
-                    cxWriteField.setText("");
+//                    cxWriteField.setText("");
                     cxLabel.setText("SUCCESS!");
                     cxLabel.setForeground(JBColor.GREEN);
-                } catch (ArrayIndexOutOfBoundsException e1){
+                } catch (ArrayIndexOutOfBoundsException e1) {
                     cxLabel.setText(ERROR_MSG1);
                     cxLabel.setForeground(JBColor.RED);
                 }
@@ -134,6 +143,7 @@ public class GUI extends DialogWrapper {
         this.init();
 
     }
+
     private String chooseFolder() {
         JFileChooser jFileChooser = new JFileChooser();
         jFileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
@@ -141,11 +151,11 @@ public class GUI extends DialogWrapper {
         if (returnVal == JFileChooser.APPROVE_OPTION) {
             return jFileChooser.getSelectedFile().getAbsolutePath();
         } else {
-            return "";
+            return null;
         }
     }
 
-    private String saveCSV(){
+    private String saveCSV() {
         JFileChooser jFileChooser = new JFileChooser();
         FileNameExtensionFilter filter = new FileNameExtensionFilter("CSV FILES", "csv", "comma separate value");
         jFileChooser.setFileFilter(filter);
@@ -156,7 +166,7 @@ public class GUI extends DialogWrapper {
         if (returnVal == JFileChooser.APPROVE_OPTION) {
             return jFileChooser.getSelectedFile().getAbsolutePath();
         } else {
-            return "";
+            return null;
         }
     }
 
@@ -169,19 +179,19 @@ public class GUI extends DialogWrapper {
         if (returnVal == JFileChooser.APPROVE_OPTION) {
             return jFileChooser.getSelectedFile().getAbsolutePath();
         } else {
-            return "";
+            return null;
         }
     }
 
-    private void writeXML(final String folder, final String csv) throws ArrayIndexOutOfBoundsException{
+    private void writeXML(final String folder, final String csv) throws ArrayIndexOutOfBoundsException {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
-                if (selected.equals("strings.xml")){
+                if (selected.equals("strings.xml")) {
                     WriteXml.parse(csv, folder);
-                }else if(selected.equals("arrays.xml")){
+                } else if (selected.equals("arrays.xml")) {
                     WriteXml.parseArray(csv, folder, WriteXml.getARRAY_FILE());
-                }else if (selected.equals("plurals.xml")){
+                } else if (selected.equals("plurals.xml")) {
                     WriteXml.parseArray(csv, folder, WriteXml.getPLURALS_FILE());
                 }
             }
@@ -189,7 +199,7 @@ public class GUI extends DialogWrapper {
 
     }
 
-    private void readXML(final String folder, final String csv) throws ArrayIndexOutOfBoundsException{
+    private void readXML(final String folder, final String csv) throws ArrayIndexOutOfBoundsException {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {

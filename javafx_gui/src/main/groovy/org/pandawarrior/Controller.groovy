@@ -110,7 +110,7 @@ class Controller {
                 c2x_indicator.setTextFill(Color.RED)
             } else {
                 c2x_txtCSVFile.clear()
-                c2x_txtXMLFolder.clear()
+//                c2x_txtXMLFolder.clear()
                 c2x_indicator.setText("SUCCESS!")
                 c2x_indicator.setTextFill(Color.GREEN)
             }
