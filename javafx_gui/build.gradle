@@ -27,6 +27,5 @@ jar {
 // In this section you declare the dependencies for your production and test code
 dependencies {
     compile project(':xml_csv_parse')
-    compile 'com.zenjava:javafx-maven-plugin:8.1.2'
 }
 

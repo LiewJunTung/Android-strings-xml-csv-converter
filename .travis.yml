@@ -4,6 +4,3 @@ notifications:
     - pandawarrior91@gmail.com
 jdk:
   - oraclejdk8
-  - oraclejdk7
-  - openjdk7
-  - openjdk8

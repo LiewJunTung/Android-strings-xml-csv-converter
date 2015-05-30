@@ -11,6 +11,11 @@
 You want to translate strings, arrays, plurals in strings.xml, arrays.xml, and plurals.xml into different 
 languages in csv so you can use as spreadsheet in Excel, Google Drive
 
+##Requirement
+Java JRE 8
+or
+Jetbrains IDE
+
 ##How to use it?
 1. Download the file
    * [groovy-app.zip](https://github.com/pandawarrior91/Android-strings-xml-csv-converter/releases/download/v0.10.0/groovy-app.zip)
@@ -30,3 +35,4 @@ Download and install the IntelliJ or Android Studio Plugin from the jetbrains re
 - [x] Ability to convert arrays and plurals
 - [x] IntelliJ and Android Studio plugin
 - [] Clean up the (very ugly) codes
+- [] Enable the application to run in Java version less than 8
