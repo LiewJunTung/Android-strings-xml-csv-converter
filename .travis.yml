@@ -1,0 +1,4 @@
+language: java
+notifications:
+  email:
+    - pandawarrior91@gmail.com
