@@ -38,7 +38,7 @@ public class GUI extends DialogWrapper {
     private JRadioButton arraysXmlRadioButton;
     private String currentFolder;
     private String selected;
-    private final static String ERROR_MSG1 = "Error! Your csv file might have a data that is empty. use 'null' or ' ' to replace it.";
+    private final static String ERROR_MSG1 = "Error! Your might a data that is empty. use 'null' or ' '(with a space) to replace it. ";
 
     public GUI(Project project, String initialFolder) {
         super(project, true);
@@ -56,7 +56,7 @@ public class GUI extends DialogWrapper {
             public void actionPerformed(ActionEvent e) {
                 String folder = chooseFolder();
                 if (folder != null)
-                xcReadField.setText(folder);
+                    xcReadField.setText(folder);
             }
         });
         xcWriteBtn.addActionListener(new ActionListener() {
@@ -64,25 +64,15 @@ public class GUI extends DialogWrapper {
             public void actionPerformed(ActionEvent e) {
                 String folder = chooseFolder();
                 if (folder != null)
-                xcWriteField.setText(folder);
+                    xcWriteField.setText(folder);
             }
         });
         xcOKButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                try {
-                    String folder = xcReadField.getText();
-                    String csv = xcWriteField.getText();
-                    readXML(folder, csv);
-                    xcReadField.setText("");
-                    xcWriteField.setText("");
-                    xcLabel.setText("SUCCESS!");
-                    xcLabel.setForeground(JBColor.GREEN);
-                } catch (ArrayIndexOutOfBoundsException e1) {
-                    xcLabel.setText(ERROR_MSG1);
-                    xcLabel.setForeground(JBColor.RED);
-                }
-
+                String folder = xcReadField.getText();
+                String csv = xcWriteField.getText();
+                readXML(folder, csv);
             }
         });
         cxReadBtn.addActionListener(new ActionListener() {
@@ -90,7 +80,7 @@ public class GUI extends DialogWrapper {
             public void actionPerformed(ActionEvent e) {
                 String csv = chooseCSV();
                 if (csv != null)
-                cxReadField.setText(csv);
+                    cxReadField.setText(csv);
             }
         });
         cxWriteBtn.addActionListener(new ActionListener() {
@@ -98,24 +88,16 @@ public class GUI extends DialogWrapper {
             public void actionPerformed(ActionEvent e) {
                 String folder = chooseFolder();
                 if (folder != null)
-                cxWriteField.setText(folder);
+                    cxWriteField.setText(folder);
             }
         });
         cxOKButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                try {
-                    String csv = cxReadField.getText();
-                    String folder = cxWriteField.getText();
-                    writeXML(folder, csv);
-                    cxReadField.setText("");
-//                    cxWriteField.setText("");
-                    cxLabel.setText("SUCCESS!");
-                    cxLabel.setForeground(JBColor.GREEN);
-                } catch (ArrayIndexOutOfBoundsException e1) {
-                    cxLabel.setText(ERROR_MSG1);
-                    cxLabel.setForeground(JBColor.RED);
-                }
+
+                String csv = cxReadField.getText();
+                String folder = cxWriteField.getText();
+                writeXML(folder, csv);
 
             }
         });
@@ -183,17 +165,27 @@ public class GUI extends DialogWrapper {
         }
     }
 
-    private void writeXML(final String folder, final String csv) throws ArrayIndexOutOfBoundsException {
+    private void writeXML(final String folder, final String csv) {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
-                if (selected.equals("strings.xml")) {
-                    WriteXml.parse(csv, folder);
-                } else if (selected.equals("arrays.xml")) {
-                    WriteXml.parseArray(csv, folder, WriteXml.getARRAY_FILE());
-                } else if (selected.equals("plurals.xml")) {
-                    WriteXml.parseArray(csv, folder, WriteXml.getPLURALS_FILE());
+                try {
+                    if (selected.equals("strings.xml")) {
+                        WriteXml.parse(csv, folder);
+                    } else if (selected.equals("arrays.xml")) {
+                        WriteXml.parseArray(csv, folder, WriteXml.getARRAY_FILE());
+                    } else if (selected.equals("plurals.xml")) {
+                        WriteXml.parseArray(csv, folder, WriteXml.getPLURALS_FILE());
+                    }
+                    xcReadField.setText("");
+                    xcWriteField.setText("");
+                    xcLabel.setText("SUCCESS!");
+                    xcLabel.setForeground(JBColor.GREEN);
+                } catch (ArrayIndexOutOfBoundsException e1) {
+                    cxLabel.setText(ERROR_MSG1);
+                    cxLabel.setForeground(JBColor.RED);
                 }
+
             }
         });
 
@@ -203,7 +195,16 @@ public class GUI extends DialogWrapper {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
-                ReadXml.parseAll(folder, csv);
+                try {
+                    ReadXml.parseAll(folder, csv);
+                    cxReadField.setText("");
+                    cxLabel.setText("SUCCESS!");
+                    cxLabel.setForeground(JBColor.GREEN);
+                } catch (Exception e) {
+                    cxLabel.setText(ERROR_MSG1);
+                    cxLabel.setForeground(JBColor.RED);
+                }
+
             }
         });
 
