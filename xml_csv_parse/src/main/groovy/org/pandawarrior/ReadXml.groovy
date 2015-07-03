@@ -170,7 +170,7 @@ class ReadXml {
             def tempXml = new XmlSlurper().parseText(xmlFile)
             def tempResources = tempXml.string
             tempResources.each {
-                tempMap[it.@name as String] = it.text().replaceAll(",", "@@")
+                tempMap[it.@name as String] = it.text()
             }
             mainMap[it.key] = tempMap
 //                println mainMap
@@ -221,10 +221,10 @@ class ReadXml {
 
     protected static String createCSV(List headerList, List valueList) {
         String csv
-        csv = headerList.join(",") + "\n"
+        csv = '\"'+headerList.join('\",\"') + '\"\n'
         valueList.each {
-            csv += it.collect({it!=null?it:" "}).join(",")
-            csv += "\n"
+            csv += it.collect({it!=null?"\"${it}\"":'\"\"'}).join(',')
+            csv += '\n'
         }
         return csv
     }

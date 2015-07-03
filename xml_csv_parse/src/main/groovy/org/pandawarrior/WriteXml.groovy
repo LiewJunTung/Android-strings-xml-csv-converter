@@ -9,6 +9,7 @@ class WriteXml {
 
     final static String ARRAY_FILE = "arrays"
     final static String PLURALS_FILE = "plurals"
+    private static final String REGEX = /,(?=([^\"]*\"[^\"]*\")*[^\"]*$)/
 
     static boolean parse(String csvPath, String moduleFolder) {
         //load and split the file
@@ -32,21 +33,26 @@ class WriteXml {
     protected static List getRows(String csvPath) {
         String csv = new File(csvPath).getText()
         String[] lines = csv.split('\n')
-        List<String[]> rows = lines.collect { it.split(',') }
+        List<String[]> rows = lines.collect{
+            it.split(REGEX, -1)
+        }
         return rows
     }
 
     protected static List getHead(List rows) {
         List head = rows.get(0)
+        head = head - "\"name\""
         head = head - "name"
+        head = head - "\"translatable\""
         head = head - "translatable"
+//        println head
         return head
     }
 
     protected static Map getTransMap(List rows) {
         Map transMap = [:]
         for (int i = 1; i < rows.size(); i++) {
-            transMap[rows[i][0]] = rows[i][1].replaceAll("\\s", "")
+            transMap[rows[i][0]] = rows[i][1].replaceAll("\"", "")
         }
         return transMap
     }
@@ -62,7 +68,7 @@ class WriteXml {
                 def name = column[0]
                 tempMap[name] = column[i + 2]
             }
-            mainDict[head[i].replaceAll("\\s", "")] = tempMap
+            mainDict[head[i].replaceAll("\"", "")] = tempMap
         }
         return mainDict
     }
@@ -88,7 +94,7 @@ class WriteXml {
 
                 }
             }
-            mainArrayMap[head[i].replaceAll("\\s", "")] = tempMap
+            mainArrayMap[head[i].replaceAll("\"", "")] = tempMap
         }
         return mainArrayMap
     }
@@ -109,11 +115,14 @@ class WriteXml {
             xml.resources {
                 mainDictValue.each {
                     def key = it.key
-                    def value = it.value.replaceAll("@@", ",")
-                    if (fileName.equals("values") && transDict[key].equals("false")) {
-                        string(name: key, translatable: transDict[key], value)
-                    } else if (transDict[key].equals("true") && !value.equals("null") && !value.equals(" ")) {
-                        string(name: key, value)
+                    def value = it.value.replaceAll("\"", "")
+                    if (fileName.equals("values") && transDict[key].equals("false") ||
+                            fileName.equals("values") && !transDict[key]) {
+                        string(name: key.replaceAll("\"", ""), translatable: transDict[key], value)
+                    } else if (transDict[key].equals("true") && !value.equals("null") && !value.equals("") ||
+                            transDict[key] && !value.equals("null") && !value.equals("")
+                    ) {
+                        string(name: key.replaceAll("\"", ""), value)
                     }
                 }
             }

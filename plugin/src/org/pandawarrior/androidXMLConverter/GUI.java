@@ -38,7 +38,7 @@ public class GUI extends DialogWrapper {
     private JRadioButton arraysXmlRadioButton;
     private String currentFolder;
     private String selected;
-    private final static String ERROR_MSG1 = "Error! Your might a data that is empty. use 'null' or ' '(with a space) to replace it. ";
+    private final static String ERROR_MSG1 = "Error! ";
 
     public GUI(Project project, String initialFolder) {
         super(project, true);
@@ -177,12 +177,12 @@ public class GUI extends DialogWrapper {
                     } else if (selected.equals("plurals.xml")) {
                         WriteXml.parseArray(csv, folder, WriteXml.getPLURALS_FILE());
                     }
-                    xcReadField.setText("");
-                    xcWriteField.setText("");
-                    xcLabel.setText("SUCCESS!");
-                    xcLabel.setForeground(JBColor.GREEN);
+                    cxReadField.setText("");
+                    cxWriteField.setText("");
+                    cxLabel.setText("SUCCESS!");
+                    cxLabel.setForeground(JBColor.GREEN);
                 } catch (ArrayIndexOutOfBoundsException e1) {
-                    cxLabel.setText(ERROR_MSG1);
+                    cxLabel.setText(ERROR_MSG1 + e1.getMessage());
                     cxLabel.setForeground(JBColor.RED);
                 }
 
@@ -197,12 +197,12 @@ public class GUI extends DialogWrapper {
             public void run() {
                 try {
                     ReadXml.parseAll(folder, csv);
-                    cxReadField.setText("");
-                    cxLabel.setText("SUCCESS!");
-                    cxLabel.setForeground(JBColor.GREEN);
+                    xcReadField.setText("");
+                    xcLabel.setText("SUCCESS!");
+                    xcLabel.setForeground(JBColor.GREEN);
                 } catch (Exception e) {
-                    cxLabel.setText(ERROR_MSG1);
-                    cxLabel.setForeground(JBColor.RED);
+                    xcLabel.setText(ERROR_MSG1 + e.getMessage());
+                    xcLabel.setForeground(JBColor.RED);
                 }
 
             }
