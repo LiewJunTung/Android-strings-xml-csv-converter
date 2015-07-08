@@ -154,16 +154,17 @@ class WriteXml {
                 mainDictValue.each {
                     def key = it.key
                     def value = it.value.collect()
-                    if (fileName.equals("values") && transDict[key].equals("false")) {
+                    if (fileName.equals("values") && transDict[key].equals("false") ||
+                            fileName.equals("values") && !transDict[key]) {
                         "${rowName}"(name: key, translatable: transDict[key]) {
                             value.each {
                                 item(it)
                             }
                         }
-                    } else if (transDict[key].equals("true")) {
+                    } else if (transDict[key].equals("true") || transDict[key]) {
                         "${rowName}"(name: key) {
                             value.each {
-                                if (!it.equals("null") || !it.equals(" ")) {
+                                if (!it.equals("null") || !it.equals(" ") || !it.equals("") ) {
                                     item(it)
                                 }
                             }
