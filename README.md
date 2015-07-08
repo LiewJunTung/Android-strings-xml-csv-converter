@@ -35,4 +35,5 @@ Download and install the IntelliJ or Android Studio Plugin from the jetbrains re
 - [x] Ability to convert arrays and plurals
 - [x] IntelliJ and Android Studio plugin
 - [] Clean up the (very ugly) codes
-- [] Enable the application to run in Java version less than 8
+- [x] Enable the application to run in Java version less than 8
+- [x] Added support for commas
