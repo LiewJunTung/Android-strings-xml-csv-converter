@@ -1,7 +1,7 @@
 <idea-plugin>
   <id>com.pandawarrior.androidXMLConverter</id>
   <name>Android Strings.xml To CSV Converter</name>
-  <version>2.0.0</version>
+  <version>2.0.1</version>
   <vendor email="pandawarrior91@gmail.com" url="https://github.com/pandawarrior91">Liew Jun Tung</vendor>
 
   <description><![CDATA[
@@ -12,9 +12,9 @@
       </br>
       <p>Changelog</p>
       <p></p>
-      <p>1.2.0</p>
-      <p>Support commas in data now
-      <p>Fixes plugin bug of displaying "Success" even though there are errors</p>
+      <p>2.0.1</p>
+      <p>Support more rows of data</p>
+      <p>Bug fixes and improves stability</p>
       <a href ="https://github.com/pandawarrior91/Android-strings-xml-csv-converter">GitHub</a>
     ]]></description>
 
