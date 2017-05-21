@@ -2,7 +2,8 @@
 [![Build Status](https://travis-ci.org/pandawarrior91/Android-strings-xml-csv-converter.svg)](https://travis-ci.org/pandawarrior91/Android-strings-xml-csv-converter)
 
 ## Status
-It is getting a [rewrite](https://github.com/LiewJunTung/Kotlin-XML-CSV-Parser), stay tuned.
+I have written a better [library](https://github.com/LiewJunTung/Kotlin-XML-CSV-Parser) to handle conversion between CSV and XML and back using SQLite and OpenCSV.
+It enables users to translate even more words and less prone to errors.
 
 ## What does it do?
 #### It will convert strings.xml, arrays.xml, plurals.xml
@@ -32,12 +33,10 @@ Jetbrains IDE
 ### OR
 Download and install the IntelliJ or Android Studio Plugin from the jetbrains repository or [here](https://github.com/pandawarrior91/Android-strings-xml-csv-converter/releases/download/v0.10.0/android.xml.csv.parser.plugin.zip)
 
-## NOTE
-1. ~~It won't convert arrays and plurals (yet), make sure you save them in other files such as array.xml~~
-
 ## TODO
 - [x] Ability to convert arrays and plurals
 - [x] IntelliJ and Android Studio plugin
-- [] Clean up the (very ugly) codes
 - [x] Enable the application to run in Java version less than 8
 - [x] Added support for commas
+- [ ] Clean up the (very ugly) codes (in progress)
+- [ ] Google Sheets Integration
