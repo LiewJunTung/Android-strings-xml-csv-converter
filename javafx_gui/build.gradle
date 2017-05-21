@@ -8,6 +8,7 @@
  */
 
 apply plugin: 'application'
+apply plugin: 'groovy'
 
 
 run {
@@ -26,6 +27,7 @@ jar {
 
 // In this section you declare the dependencies for your production and test code
 dependencies {
-    compile project(':xml_csv_parse')
+    compile project(':Kotlin-XML-CSV-Parser')
+    compile 'org.codehaus.groovy:groovy-all:2.4.10'
 }
 

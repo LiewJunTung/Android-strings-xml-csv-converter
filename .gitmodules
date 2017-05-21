@@ -1,0 +1,3 @@
+[submodule "Kotlin-XML-CSV-Parser"]
+	path = Kotlin-XML-CSV-Parser
+	url = git@github.com:LiewJunTung/Kotlin-XML-CSV-Parser.git

@@ -5,8 +5,7 @@ import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.ui.JBColor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.pandawarrior.ReadXml;
-import org.pandawarrior.WriteXml;
+import org.pandawarrior.app.*
 
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
@@ -196,7 +195,6 @@ public class GUI extends DialogWrapper {
             @Override
             public void run() {
                 try {
-                    ReadXml.parseAll(folder, csv);
                     xcReadField.setText("");
                     xcLabel.setText("SUCCESS!");
                     xcLabel.setForeground(JBColor.GREEN);

@@ -9,9 +9,9 @@ import javafx.scene.paint.Color
 import javafx.stage.DirectoryChooser
 import javafx.stage.FileChooser
 import javafx.stage.Stage
-
-import org.pandawarrior.ReadXml
-import org.pandawarrior.WriteXml
+import org.pandawarrior.app.CSVToXMLKt
+import org.pandawarrior.app.TranslationType
+import org.pandawarrior.app.XMLToCSVKt
 
 /**
  * Created by jt on 5/10/15.
@@ -48,27 +48,28 @@ class Controller {
 
     }
 
-    public void x2c_runXMLtoCSV(ActionEvent actionEvent) {
-        try{
+    void x2c_runXMLtoCSV(ActionEvent actionEvent) {
+        try {
             String folderPath = x2c_txtXMLFolder.getText()
             String filePath = x2c_txtCSVFile.getText()
             if (folderPath.length() > 0 && filePath.length() > 0) {
-                boolean result = ReadXml.parseAll(folderPath, filePath)
-                if (!result) {
-                    x2c_indicator.setText("UNSUCESSFUL!")
-                    x2c_indicator.setTextFill(Color.RED)
-                } else {
-                    x2c_txtCSVFile.clear()
-                    x2c_txtXMLFolder.clear()
-                    x2c_indicator.setText("SUCCESS!")
-                    x2c_indicator.setTextFill(Color.GREEN)
-                }
+                XMLToCSVKt.processXMLToCSV(folderPath, filePath, TranslationType.NORMAL)
+                XMLToCSVKt.processXMLToCSV(folderPath, filePath, TranslationType.PLURALS)
+                XMLToCSVKt.processXMLToCSV(folderPath, filePath, TranslationType.ARRAYS)
+                x2c_txtCSVFile.clear()
+                x2c_txtXMLFolder.clear()
+                x2c_indicator.setText("SUCCESS!")
+                x2c_indicator.setTextFill(Color.GREEN)
             } else {
                 x2c_indicator.setText("Please set folder or file location!")
                 x2c_indicator.setTextFill(Color.RED)
             }
-        }catch (ArrayIndexOutOfBoundsException e){
-            x2c_indicator.setText("Error! Try adding a space or null in the empty values")
+        } catch (Exception e) {
+            if (e.message != null) {
+                x2c_indicator.setText(e.message)
+            } else {
+                x2c_indicator.setText("Error! Try adding a space or null in the empty values")
+            }
             x2c_indicator.setTextFill(Color.RED)
         }
 
@@ -76,7 +77,7 @@ class Controller {
 
     public void c2x_openCSVFile(ActionEvent actionEvent) {
         FileChooser chooser = new FileChooser();
-        chooser.setTitle("Open File");
+        chooser.setTitle("Open File")
         chooser.getExtensionFilters().add(
                 new FileChooser.ExtensionFilter("CSV File (*.csv)", "*.csv")
         )
@@ -92,18 +93,23 @@ class Controller {
     }
 
     public void c2x_runCSVtoXML(ActionEvent actionEvent) {
-        try{
+        try {
             String selected = (myToggleGroup.selectedToggle as RadioButton).text
+            String csvFilePath = c2x_txtCSVFile.getText()
+            String xmlFolderPath = c2x_txtXMLFolder.getText()
+
             boolean result
-            switch (selected){
+            switch (selected) {
                 case "arrays.xml":
-                    result = WriteXml.parseArray(c2x_txtCSVFile.getText(), c2x_txtXMLFolder.getText(), WriteXml.ARRAY_FILE)
+                    result = CSVToXMLKt.processCSVToXML(csvFilePath, xmlFolderPath, TranslationType.ARRAYS)
                     break;
                 case "plurals.xml":
-                    result = WriteXml.parseArray(c2x_txtCSVFile.getText(), c2x_txtXMLFolder.getText(), WriteXml.PLURALS_FILE)
+                    result = CSVToXMLKt.processCSVToXML(csvFilePath, xmlFolderPath, TranslationType.PLURALS)
+                    // result = WriteXml.parseArray(c2x_txtCSVFile.getText(), c2x_txtXMLFolder.getText(), WriteXml.PLURALS_FILE)
                     break;
                 default:
-                    result = WriteXml.parse(c2x_txtCSVFile.getText(), c2x_txtXMLFolder.getText())
+                    result = CSVToXMLKt.processCSVToXML(csvFilePath, xmlFolderPath, TranslationType.NORMAL)
+            //result = WriteXml.parse(c2x_txtCSVFile.getText(), c2x_txtXMLFolder.getText())
             }
             if (!result) {
                 c2x_indicator.setText("UNSUCESSFUL!")
@@ -114,8 +120,12 @@ class Controller {
                 c2x_indicator.setText("SUCCESS!")
                 c2x_indicator.setTextFill(Color.GREEN)
             }
-        }catch (ArrayIndexOutOfBoundsException e){
-            c2x_indicator.setText("Error! Try adding a space or null in the empty values")
+        } catch (Exception e) {
+            if (e.message != null && e.message.length() > 0) {
+                c2x_indicator.setText(e.message)
+            } else {
+                c2x_indicator.setText("Error! Try adding a space or null in the empty values")
+            }
             c2x_indicator.setTextFill(Color.RED)
         }
 
