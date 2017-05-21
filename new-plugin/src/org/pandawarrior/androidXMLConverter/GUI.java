@@ -5,7 +5,9 @@ import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.ui.JBColor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.pandawarrior.app.*
+import org.pandawarrior.app.CSVToXMLKt;
+import org.pandawarrior.app.TranslationType;
+import org.pandawarrior.app.XMLToCSVKt;
 
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
@@ -71,7 +73,7 @@ public class GUI extends DialogWrapper {
             public void actionPerformed(ActionEvent e) {
                 String folder = xcReadField.getText();
                 String csv = xcWriteField.getText();
-                readXML(folder, csv);
+                writeCSV(folder, csv);
             }
         });
         cxReadBtn.addActionListener(new ActionListener() {
@@ -170,11 +172,14 @@ public class GUI extends DialogWrapper {
             public void run() {
                 try {
                     if (selected.equals("strings.xml")) {
-                        WriteXml.parse(csv, folder);
+                        //WriteXml.parse(csv, folder);
+                        CSVToXMLKt.processCSVToXML(csv, folder, TranslationType.NORMAL);
                     } else if (selected.equals("arrays.xml")) {
-                        WriteXml.parseArray(csv, folder, WriteXml.getARRAY_FILE());
+                        CSVToXMLKt.processCSVToXML(csv, folder, TranslationType.ARRAYS);
+                        // WriteXml.parseArray(csv, folder, WriteXml.getARRAY_FILE());
                     } else if (selected.equals("plurals.xml")) {
-                        WriteXml.parseArray(csv, folder, WriteXml.getPLURALS_FILE());
+                        CSVToXMLKt.processCSVToXML(csv, folder, TranslationType.PLURALS);
+                        // WriteXml.parseArray(csv, folder, WriteXml.getPLURALS_FILE());
                     }
                     cxReadField.setText("");
                     cxWriteField.setText("");
@@ -190,11 +195,14 @@ public class GUI extends DialogWrapper {
 
     }
 
-    private void readXML(final String folder, final String csv) throws ArrayIndexOutOfBoundsException {
+    private void writeCSV(final String folder, final String csv) throws ArrayIndexOutOfBoundsException {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
                 try {
+                    XMLToCSVKt.processXMLToCSV(folder, csv, TranslationType.NORMAL);
+                    XMLToCSVKt.processXMLToCSV(folder, csv, TranslationType.ARRAYS);
+                    XMLToCSVKt.processXMLToCSV(folder, csv, TranslationType.PLURALS);
                     xcReadField.setText("");
                     xcLabel.setText("SUCCESS!");
                     xcLabel.setForeground(JBColor.GREEN);

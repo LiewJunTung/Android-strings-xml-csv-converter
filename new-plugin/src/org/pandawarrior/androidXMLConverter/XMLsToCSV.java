@@ -10,7 +10,10 @@ import com.intellij.openapi.project.Project;
  */
 public class XMLsToCSV extends AnAction {
     public void actionPerformed(AnActionEvent event) {
-        final Project project = (Project) DataKeys.PROJECT.getData(event.getDataContext());
+        final Project project = DataKeys.PROJECT.getData(event.getDataContext());
+        if (project == null){
+            return;
+        }
         final String initialFolder = project.getBasePath();
         GUI gui = new GUI(project, initialFolder);
         gui.show();

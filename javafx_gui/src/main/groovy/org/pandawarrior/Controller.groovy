@@ -111,15 +111,11 @@ class Controller {
                     result = CSVToXMLKt.processCSVToXML(csvFilePath, xmlFolderPath, TranslationType.NORMAL)
             //result = WriteXml.parse(c2x_txtCSVFile.getText(), c2x_txtXMLFolder.getText())
             }
-            if (!result) {
-                c2x_indicator.setText("UNSUCESSFUL!")
-                c2x_indicator.setTextFill(Color.RED)
-            } else {
-                c2x_txtCSVFile.clear()
-//                c2x_txtXMLFolder.clear()
-                c2x_indicator.setText("SUCCESS!")
-                c2x_indicator.setTextFill(Color.GREEN)
-            }
+
+            c2x_txtCSVFile.clear()
+            c2x_indicator.setText("SUCCESS!")
+            c2x_indicator.setTextFill(Color.GREEN)
+
         } catch (Exception e) {
             if (e.message != null && e.message.length() > 0) {
                 c2x_indicator.setText(e.message)
