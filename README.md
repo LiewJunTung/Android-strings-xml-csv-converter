@@ -1,5 +1,5 @@
 # Android String XML-CSV Converter
-[![Build Status](https://travis-ci.org/pandawarrior91/Android-strings-xml-csv-converter.svg)](https://travis-ci.org/pandawarrior91/Android-strings-xml-csv-converter)
+[![Build Status](https://travis-ci.org/LiewJunTung/Android-strings-xml-csv-converter.svg?branch=master)](https://travis-ci.org/pandawarrior91/Android-strings-xml-csv-converter)
 
 ## Status
 I have written a better [library](https://github.com/LiewJunTung/Kotlin-XML-CSV-Parser) to handle conversion between CSV and XML and back using SQLite and OpenCSV.
@@ -28,6 +28,7 @@ Jetbrains IDE
 2. Unzip or untar the file
 3. Open groovy-app/bin/groovy-app (groovy-app.bat if you are on Windows)
 4. From here, with the GUI onwards it's pretty self explanatory. Select Android folder for the value and the location of your saved csv.
+
 ![Image of CSV](https://github.com/pandawarrior91/Android-strings-xml-csv-converter/blob/master/gui.png)
 
 ### OR
