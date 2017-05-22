@@ -17,4 +17,4 @@ include 'services:webservice'
 */
 
 rootProject.name = 'groovy-app'
-include 'javafx_gui', 'Kotlin-XML-CSV-Parser'
+include 'javafx_gui', 'Kotlin-XML-CSV-Parser', 'ide-plugin'
